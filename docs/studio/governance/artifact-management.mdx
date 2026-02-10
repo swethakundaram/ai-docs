@@ -1,0 +1,80 @@
+---
+last_update: { author: "Venkateswarlu Kakani" }
+---
+
+# Artifact Management
+
+Artifact Management in WaveMaker defines how shared assets are created, published, and reused across applications and teams. It helps reduce duplicate work, enforces consistency, and improves collaboration across projects and environments.
+
+## Overview
+
+Artifacts are developed in isolated workspaces, published through defined flows, and consumed by applications once approved. Each section presents only the artifact types relevant to that category, along with their approval status.
+
+
+Artifacts are grouped into the following categories:
+
+- **Prefab Artifacts**
+- **Artifacts**
+
+---
+
+## Prefab Artifacts
+
+The **Prefab Artifacts** section is dedicated exclusively to **Prefabs**. These are reusable UI and logic blocks that can be imported into applications after approval and move through a defined lifecycle
+
+- **Pending** – Prefabs submitted and awaiting admin review  
+- **Approved** – Prefabs available for consumption  
+- **Rejected** – Prefabs that require changes before approval  
+- **Deprecated** – Prefabs that are no longer recommended for use  
+
+> **Note:** 
+> Only **Approved Prefabs** can be imported into applications.
+
+Learn more: [Publishing Artifacts](/docs/user-interfaces/web/enterprise-capabilities/prefabs/overview)
+
+---
+
+## Other Artifacts
+
+This section is used to manage non-prefab reusable assets which includes
+
+- **Project Shells** – Reusable starter applications exported from existing projects and used as a base for creating new applications.  
+> **Note:** When App Customization (Core/IMPL) is enabled, Project Shells are not supported. Existing shells should be migrated to Core projects.
+
+- **Template Bundles** – Prebuilt page templates created from a project workspace and used during page creation.  
+- **Themes** – Styling assets that control the visual appearance of applications, typically created using the WaveMaker Theme Repository with Grunt-based build commands.
+
+
+These artifacts follow the same governance and approval principles as prefabs but are managed separately.
+
+- **Pending** – Artifacts awaiting admin approval  
+- **Approved** – Artifacts available for use  
+- **Rejected** – Artifacts returned for corrections  
+- **Deprecated** – Artifacts that should no longer be used  
+
+---
+
+## Publishing Artifacts
+
+Artifacts are published when they are ready for testing or reuse. The publishing destination determines visibility and approval requirements.
+
+- **Publish to Project** - Used to test an artifact within a specific project. Such artifacts are not published to the team and appear as `unpublished (MOD)`.
+
+- **Publish to Team** - Makes the artifact available to the entire team. Admin approval is required.
+
+- **Publish to Workspace** - Makes the artifact available across all projects within the same workspace.
+
+Learn more: [Publishing Artifacts](/docs/user-interfaces/web/enterprise-capabilities/prefabs/publishing)
+
+---
+
+## Artifact Lifecycle
+
+When publishing artifacts to a team, they move through a defined lifecycle:
+
+- **In Development** – Artifact is still being worked on  
+- **Unpublished** – Artifact has been submitted for approval  
+- **Rejected** – Changes are required by the Team Admin  
+- **Approved** – Artifact is available for consumption  
+
+> **Note:** Only approved artifacts are visible in the Artifact Repository for use across applications.

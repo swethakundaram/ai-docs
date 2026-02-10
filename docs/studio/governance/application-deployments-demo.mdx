@@ -1,0 +1,65 @@
+---
+last_update: { author: "Venkateswarlu Kakani" }
+---
+
+# One-Click Deployment
+
+WaveMaker **One-Click Deployment** allows deploy applications from Studio to the Demo Cloud. With a single click, WaveMaker builds the application, provisions infrastructure, configures services using the selected deployment profile, and hosts the app automatically.
+
+---
+
+## Key Capabilities
+
+- Deploy applications to the WaveMaker Demo Cloud directly from Studio
+- Automatically validate and build the application during deployment
+- Configure databases, APIs, and security using Deployment Profiles
+- Provision infrastructure for the Demo phase without manual configuration
+- Run deployments in the background without blocking Studio
+- Generate a secure Demo URL for testing and sharing
+- Redeploy applications quickly during development
+- Assign unique URLs for Demo, Stage, and Live environments
+- Update environment configurations without rebuilding the application
+
+---
+
+## Deployment Status
+
+- **In Progress:** Deployment runs in the background with real-time updates via Studio toaster notifications and email alerts.
+- **Status Access:** The Deploy icon in the header reflects the current state and can be used to reopen the deployment status dialog.
+- **Success:** The application is deployed to WaveMaker Demo Cloud and a secure Demo URL is generated for launch or management.
+- **Failure:** Errors are available in the Inspection Framework and can be fixed before redeploying to the Demo phase.
+
+---
+
+## Post-Deployment Actions
+
+After deployment to the Demo phase, the following actions are available:
+
+- **Redeploy** – Replaces the existing Demo deployment with the latest code
+- **Launch App** – Opens the deployed application in a browser
+- **Manage App** – Opens the Apps Portal for advanced management
+
+---
+
+## Configuration Phases (Stage and Live)
+
+- **Pipeline Configuration** -WaveMaker supports multi-phase deployment pipelines that enable controlled promotion of applications across environments without code changes.
+- **Phase Configuration** - WaveMaker supports two phases for **WMO** and three phases for **WME** customers. Deployment phase has its own environment-specific configuration such as databases, services, and security settings per phase.
+- **Webhooks** -Integrated to notify external systems on deployment events such as success or failure, enabling automation with CI/CD tools, monitoring platforms, and notification services.
+- **Tests Integration** - Automated tests can be integrated into the deployment workflow to validate application functionality and prevent promotion when critical tests fail.
+
+
+Beyond the Demo phase, Stage and Live phases must be configured from the **Launchpad** in the App Deployment section.
+
+WaveMaker supported cloud providers :
+
+- AWS
+- Azure
+- Google Cloud Platform
+- DigitalOcean
+
+---
+
+## Summary
+
+One-Click Deployment enables fast and seamless application deployment from Studio to the Demo Cloud by automating build, validation, service configuration, and infrastructure provisioning, with support for promotion across Stage and Live environments.

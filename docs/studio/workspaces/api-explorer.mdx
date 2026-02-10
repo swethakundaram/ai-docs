@@ -1,0 +1,119 @@
+---
+last_update: { author: "Shahnawaz Ahmed" }
+---
+
+# API Explorer
+
+
+The API Explorer provides a dedicated workspace for discovering, importing, and managing APIs within 
+a project. It offers a structured interface to explore different API types, inspect their details, and 
+validate their behavior before integrating them into application logic. This walkthrough demonstrates 
+how the API Explorer supports a smooth and consistent API integration workflow.
+
+
+- Centralized workspace for viewing Core APIs and Imported APIs in a project
+
+- Import of API Bundles using Swagger/OpenAPI definitions
+
+- Import of individual REST APIs by providing endpoint URLs and request types
+
+- Exploration of APIs through entities, endpoints, parameters, and schemas
+
+- Built-in capability to execute APIs and review requests, responses, and cURL details
+
+- Support for importing WebSocket services with testing performed after successful import
+
+<AcademyCard
+  title="API Explorer"
+  
+  academyLink="https://next-academy.wavemaker.com/Walkthrough?wm=DA8D25F72D"
+>
+
+
+  <>
+  <div style={{ position: "relative", paddingBottom: "56.25%" }}>
+    <iframe
+      style={{
+        width: "100%",
+        height: "100%",
+        position: "absolute",
+        left: 0,
+        top: 0,
+        borderRadius: 10
+      }}
+      src="https://embed.app.guidde.com/playbooks/4AW5moQvEJ1rpeaSuNGGof?mode=videoOnly"
+      title="Database Explorer"
+      frameBorder={0}
+      referrerPolicy="unsafe-url"
+      allowFullScreen="true"
+      allow="clipboard-write"
+      sandbox="allow-popups allow-popups-to-escape-sandbox allow-scripts allow-forms allow-same-origin allow-presentation"
+    />
+  </div>
+  <div style={{ display: "none" }}>
+ <p>00:00: Hi! Welcome to the tour of API Explorer in WaveMaker. In this video we will walk you 
+ through the User interface of the API workspace. And</p>
+ <p>00:09: to help us with the tour, we shall see the import of different types of APIs.</p>
+ <p>00:14: So, Let's get started</p>
+ <p>00:16: Let us first navigate to the API workspace.</p>
+ <p>00:21: Let's see what we have here.</p>
+ <p>00:22: On the left-hand side we see two sections at the top core apis and below is the section called imported apis.</p>
+ <p>00:31: In the core apis section we see Java service and security service.</p>
+ <p>00:36: All your Java services in your project will be listed here and your Security Services will be listed in the security service table.</p>
+ <p>00:44: In the imported API section, there are three tabs API bundles, rest apis and web socket.</p>
+ <p>00:51: Let's import some APIs.</p>
+ <p>00:54: So the import apis button brings us to this dialogue.</p>
+ <p>00:57: Where it gives us option to import API bundles, that is Swagger import.</p>
+ <p>01:03: Then rest apis like get apis post apis, etc.</p>
+ <p>01:08: And lastly web socket here we can import websocket services.</p>
+ <p>01:12: Let's try to import an API Bundle.</p>
+ <p>01:15: I have a Swagger file that we will upload, to import the API bundles defined in it.</p>
+ <p>01:20: I am selecting the file from my file storage.</p>
+ <p>01:24: And then I hit next. The file is read and we are taken to the API listing UI.</p>
+ <p>01:30: At the top you can give a name to the service bundle that you will import this will help you identify the service later on.</p>
+ <p>01:37: And below that in the left-hand side all the entities in the bundle are listed in a navigation bar clicking on any of these will expose the apis related to that entity.</p>
+ <p>01:48: You can click on them and explore.</p>
+ <p>01:50: You can expand these APIs and see their details, like, description of the Endpoint, it's Parameters and so on.</p>
+ <p>01:56: So let's click on import to add this bundle into our project.</p>
+ <p>02:01: On successful import, in the settings tab, we see</p>
+ <p>02:04: Now, let's move to the End points tab. We see all the entities here and their endpoints.</p>
+ <p>02:09: I am going to the Customers entity and expanding it's, Get Customer endpoint</p>
+ <p>02:16: Let's click here and try it out</p>
+ <p>02:21: Selecting for one page in the parameters and leaving the rest as it is.</p>
+ <p>02:25: Let's execute the call.</p>
+ <p>02:30: Here we can check the Curl, and below is the request URL</p>
+ <p>02:38: And further down is the response.</p>
+ <p>02:53: Let us explore a Post API. Let's see what we get on trying it out.</p>
+ <p>03:00: In the parameters, we can provide a sample payload and try it out</p>
+ <p>03:04: Now let us try other types of API import.</p>
+ <p>03:08: This time we will import a Rest API. So let's start with clicking on Import AP eyes. And then, we chose Rest AP eyes.</p>
+ <p>03:16: In this form we have to feed the API URL. I have a get API which is hosted in a remote server. I am going to use that URL.</p>
+ <p>03:25: I am feeding the URL here</p>
+ <p>03:29: Now we have to choose the API type, like, get, Post, Put, update and so on.</p>
+ <p>03:34: Now we have to try it out and fetch the response. So let's click "Test".</p>
+ <p>03:39: So the server has responsed with the response. And we can check it out in the response body.</p>
+ <p>03:45: Let us give a meaningful name to the service. So that we can identify it easily among other services</p>
+ <p>03:57: And now it's time to import the API into our project, so let's hit import.</p>
+ <p>04:02: You can see the newly service created services listed in the rest API section.</p>
+ <p>04:14: So, let's go to the third type of API and that is a web socket. And as we all know a web socket is a way for a browser and a server to talk to each other instantly both ways over a single open connection.</p>
+ <p>04:29: We will see how and where a web socket is imported into a wave maker project.</p>
+ <p>04:31: In this dialogue we have to provide the websocket url, which is usually in the WSS protocol.</p>
+ <p>04:37: So the dialogue prompt bar, prompts us to provide a Valid Websocket Endpoint.</p>
+ <p>04:42: I have put up a web socket server in the localhost and I am providing it here.</p>
+ <p>04:47: Since it is a insecure AWS URL and our studio is a secure https hosting we cannot test it yet. We can only test it after the import.</p>
+ <p>04:58: So I am choosing proceed witho testing. And hitting next to proceed to the next step.</p>
+ <p>05:04: We can see the URL that we provided. And it is asking us to give a meaningful name to the service. So all good. And now, we are ready to import</p>
+ <p>05:14: So let's hit import.</p>
+ <p>05:15: Now, that we have imported the Websocket service, into the project. We can proceed for testing.</p>
+ <p>05:21: So you can see the server is constantly being pinged and it is returning with the response.</p>
+ <p>05:27: The service that has been put up in the web socket is a random number generator.</p>
+ <p>05:32: So the data is coming in continuously in the provided time interval.</p>
+ <p>05:37: So with this we have seen the import of a websocket service.</p>
+ <p>05:40: this concludes the tour of the API Explorer</p>
+ <p>05:44: we saw how different API types can be imported explored and tested within a single workspace and how endpoints parameters and responses can be reviewed before use.</p>
+ <p>05:55: We also observed the import flow for web socket services where testing is performed after a successful input.</p>
+</div>
+</>
+
+
+  </AcademyCard>

@@ -1,0 +1,272 @@
+---
+last_update: { author: "Priyanka Bhadri" }
+---
+
+# Token-Based Authentication(JWS / OPAQUE)
+
+WaveMaker supports **token-based authentication**, allowing applications to verify user identities using secure tokens instead of managing credentials directly. This approach enhances security, simplifies login flows, and enables **single sign-on (SSO)** and API protection across applications.  
+
+WaveMaker supports two primary token types:
+
+1. **JWS (JWT) Tokens** – self-contained, cryptographically signed tokens carrying user identity and claims.  
+2. **OPAQUE Tokens** – reference-style tokens that require server-side introspection to retrieve user identity.
+
+In a WaveMaker application:  
+- WaveMaker acts as the **Client / Relying Party**.  
+- An external system acts as the **Token Provider**.
+
+---
+
+## How Token-Based Authentication Works in WaveMaker
+
+1. A user or client requests access to a secured WaveMaker application or API.  
+2. The application receives a token (JWS or OPAQUE) from the external provider.  
+3. For **JWS tokens**, WaveMaker validates the token locally using the provider’s public keys.  
+4. For **OPAQUE tokens**, WaveMaker calls the **Introspection URL** to verify the token and retrieve user identity and claims.  
+5. WaveMaker establishes a secure session and resolves user roles.  
+6. Authorization rules are applied to pages, services, and APIs.
+
+This flow ensures secure authentication without exposing credentials to the application.
+
+---
+
+## Token Types in WaveMaker
+
+### 1. JWS (JWT) Tokens
+
+- **Self-contained**: carry user claims (e.g., `sub`, `email`, `roles`) within the token.  
+- **Signed**: verified using provider public keys (JWKS endpoint).  
+- **Principal Claim Name**: the claim used to identify the user (commonly `sub` or `email`).  
+
+**Example Configuration:**
+
+```json
+{
+  "jwsProviderId": "provider-1234abcd-5678-efgh-9012-ijklmnopqrst",
+  "issuer": "https://auth.example.com/",
+  "issueUrl": "https://auth.example.com/.well-known/jwks.json",
+  "principalClaimName": "sub",
+  "audience": "my-wave-maker-app",
+  "scopes": ["openid", "profile", "email"],
+  "tokenType": "JWT",
+  "description": "Sample JWS provider configuration for WaveMaker."
+}
+```
+
+### 2. OPAQUE Tokens
+
+- **Reference-style:** the token itself contains no user info.  
+- **Requires introspection:** WaveMaker calls the Introspection URL to get active status, user identity, and claims.  
+- **Principal Claim Name:** the field returned by introspection that identifies the user (commonly `username` or `user_id`).  
+
+
+
+** Example Configuration **
+
+```json
+{
+  "introspectionUrl": "https://auth.example.com/oauth2/introspect",
+  "clientId": "my-client-id",
+  "clientSecret": "my-client-secret",
+  "principalClaimName": "username",
+  "description": "Sample OPAQUE token configuration for WaveMaker."
+}
+
+```
+
+---
+
+
+## Configuring Token-Based Authentication in WaveMaker
+
+- Token-based authentication allows applications to authenticate users using security tokens such as JWS (JWT) or OPAQUE tokens, enabling secure and stateless authentication mechanisms.
+
+- Security must be enabled in the application to ensure that protected pages, services, and APIs are accessible only to authenticated users.
+
+- Token-based authentication can be configured by selecting either **JWS (JWT)** or **OPAQUE** as the authentication provider, assigning a unique provider name, and optionally setting it as the primary authentication mechanism.
+
+- Provider configuration depends on the selected token type:
+
+  - **JWS (JWT) Token Configuration**
+    - **Issuer URL**
+      - Identifies the trusted token issuer.
+    - **JWKS URL**
+      - Provides public keys used to verify token signatures.
+    - **Audience**
+      - Specifies the intended recipient of the token.
+    - **Scopes**
+      - Defines access permissions included within the token.
+    - **Principal Claim Name**
+      - Identifies the claim used to determine the authenticated user.
+
+  - **OPAQUE Token Configuration**
+    - **Introspection URL**
+      - Endpoint used to validate tokens and retrieve token details.
+    - **Client ID**
+      - Identifies the WaveMaker application to the token provider.
+    - **Client Secret**
+      - Used along with the Client ID to authenticate introspection requests.
+    - **Principal Claim Name**
+      - Identifies the claim used to determine the authenticated user.
+
+- Attribute mapping allows WaveMaker to map token claims to application-level user fields:
+  - Username or Subject
+  - Email (if available)
+  - Display Name (optional)
+  - Roles or Groups (optional)
+
+- Role resolution can be handled in multiple ways:
+  - Roles can be directly extracted from token claims.
+  - Roles can be resolved from a database using the authenticated principal identifier.
+
+- After successful authentication, WaveMaker enforces authorization rules across the application:
+  - Access to pages, services, and APIs is controlled based on assigned roles.
+  - Access permissions and role-based restrictions are applied consistently.
+  - Unauthorized users are prevented from accessing restricted resources.
+
+
+
+---
+
+## Generated Backend Code (JWS / OPAQUE Tokens)
+
+When token-based authentication (JWS or OPAQUE) is configured in WaveMaker, the platform automatically generates a **security service** that manages authentication, authorization, and request interception at runtime. This structure is platform-managed and should not be edited manually.
+
+### Project Structure
+
+```text
+services/
+└── securityService
+    ├── designtime
+    │   ├── auth-info.json
+    │   ├── general-options.json
+    │   ├── intercept-urls.json
+    │   ├── roles.json
+    │   ├── securityService_API.json
+    │   ├── service-info.json
+    │   └── wm-xss-policies.json
+    └── src
+        └── servicedefs
+            └── securityService-service-definitions.json
+```
+
+### Design-Time Configuration (`designtime`)
+
+The `designtime` folder contains security configuration created through WaveMaker Studio. These files define how token-based authentication (JWS/OPAQUE) and authorization are applied across the application.
+
+* **`auth-info.json`**
+  Stores provider details:
+
+  * For **JWS tokens**: issuer URL, JWKS endpoint, audience, scopes, principal claim name.
+  * For **OPAQUE tokens**: introspection URL, client ID, client secret, principal claim name.
+
+* **`general-options.json`**
+  Defines global security settings including session management, token behavior, CORS, CSRF, and SSL options.
+
+* **`intercept-urls.json`**
+  Specifies secured URL patterns and the access levels required to invoke them.
+
+* **`roles.json`**
+  Defines application roles used for role-based access control (RBAC).
+
+* **`securityService_API.json`**
+  Exposes internal security-related APIs used by the WaveMaker platform.
+
+* **`service-info.json`**
+  Contains metadata describing the security service.
+
+* **`wm-xss-policies.json`**
+  Configures XSS protection policies enforced at runtime.
+
+### Runtime Service Definitions (`src/servicedefs`)
+
+The service definition files connect the design-time security configuration to the backend runtime. They enable consistent, server-side enforcement of:
+
+* Token validation (JWS verified via signing keys, OPAQUE via introspection)
+* Principal and user identity resolution
+* Role mapping and authorization rules
+* Security context enforcement across pages, services, and APIs
+
+---
+
+## Runtime Behavior
+
+- WaveMaker intercepts secured requests.  
+- **JWS tokens** are verified locally using provider keys.  
+- **OPAQUE tokens** are validated via introspection.  
+- Security context is established and enforced across UI, services, and APIs.
+
+---
+
+## Application Configuration Properties
+
+Whenever security is configured in WaveMaker, the platform automatically **generates configuration properties** that can be mapped to different environments such as Development, QA, or Production.  
+You can view and manage these properties in the **Profiles**.  
+For more information, refer to the **[Profiles](../../configurations/profiles.md)** section in the documentation.
+
+For more details on environment-specific configurations, refer to the **[Deployment Profiles](../../configurations/profile-settings.md)** section.
+
+<details>
+<summary>Click to expand configuration properties</summary>
+
+```properties
+# Security Configuration (JWS/OPAQUE)
+
+security.activeProviders=JWS.provider-1234abcd-5678-efgh-9012-ijklmnopqrst,OPAQUE_TOKEN
+security.enabled=true
+security.general.client.ssl.hostNameVerification.enabled=true
+security.general.cookie.base64Encode=true
+security.general.cookie.jvmRoute=
+security.general.cookie.maxAge=-1
+security.general.cookie.path=
+security.general.cookie.sameSite=
+security.general.cors.allowCredentials=false
+security.general.cors.enabled=false
+security.general.cors.maxAge=1600
+security.general.cors.pathEntries.root.allowedOrigins=*
+security.general.csp.enabled=false
+security.general.csp.policy=
+security.general.frameOptions.allowFromUrl=
+security.general.frameOptions.enabled=true
+security.general.frameOptions.mode=SAMEORIGIN
+security.general.login.maxSessionsAllowed=-1
+security.general.mtls.enabled=false
+security.general.mtls.keystore.file=
+security.general.mtls.keystore.fileType=
+security.general.mtls.keystore.password=
+security.general.rememberMe.enabled=false
+security.general.rememberMe.timeOut=1296000
+security.general.request.allowedHosts=
+security.general.session.timeout=30
+security.general.ssl.enabled=false
+security.general.ssl.port=443
+security.general.tokenService.enabled=true
+security.general.tokenService.parameter=WM_AUTH_TOKEN
+security.general.tokenService.tokenValiditySeconds=1800
+security.general.truststore.config=SYSTEM_ONLY
+security.general.truststore.file=
+security.general.truststore.fileType=
+security.general.truststore.password=
+security.general.xsrf.enabled=true
+security.general.xss.dataBackwardCompatibility=false
+security.general.xss.enabled=true
+security.general.xss.sanitizationLayer=OUTPUT
+security.providers.jws.provider-1234abcd-5678-efgh-9012-ijklmnopqrst.enabled=true
+security.providers.jws.provider-1234abcd-5678-efgh-9012-ijklmnopqrst.issuerUrl=https://auth.example.com/.well-known/jwks.json
+security.providers.jws.provider-1234abcd-5678-efgh-9012-ijklmnopqrst.principalClaimName=sub
+security.providers.jws.provider-1234abcd-5678-efgh-9012-ijklmnopqrst.roleMappingEnabled=false
+security.providers.opaqueToken.clientId=my-wave-maker-app
+security.providers.opaqueToken.clientSecret=my-client-secret
+security.providers.opaqueToken.introspectionUrl=https://auth.example.com/oauth2/introspect
+security.providers.opaqueToken.principalClaimName=username
+security.providers.opaqueToken.roleMappingEnabled=false
+security.session.persistence.type=in-memory
+
+```
+</details>
+
+
+
+## Summary
+
+Token-based authentication in WaveMaker enables secure identity verification using industry-standard tokens. By supporting both **JWS (JWT)** and **OPAQUE** tokens, WaveMaker ensures flexible, modern authentication while maintaining robust server-side security and consistent role-based access control.

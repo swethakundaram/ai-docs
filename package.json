@@ -1,0 +1,57 @@
+{
+  "name": "wm-docs",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "npm run pre-build-scripts && docusaurus start",
+    "build": "npm run pre-build-scripts && docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "manage-docs": "node scripts/doc-manager.mjs",
+    "pre-build-scripts": "node scripts/gen-metrics.js && node scripts/gen-tech-stack-versions.js",
+    "gen-metrics": "node scripts/gen-metrics.js"
+  },
+  "dependencies": {
+    "@docusaurus/core": "3.9.2",
+    "@docusaurus/preset-classic": "3.9.2",
+    "@docusaurus/theme-mermaid": "^3.9.2",
+    "@mdx-js/react": "^3.0.0",
+    "clsx": "^2.0.0",
+    "framer-motion": "^12.23.26",
+    "lucide-react": "^0.562.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-markdown": "^10.1.0",
+    "redoc": "^2.5.2",
+    "wm-ui-components": "^1.0.0"
+  },
+  "devDependencies": {
+    "@docusaurus/faster": "^3.9.2",
+    "@docusaurus/module-type-aliases": "3.9.2",
+    "chalk": "^5.6.2",
+    "gray-matter": "^4.0.3",
+    "inquirer": "^12.11.1",
+    "prettier": "^3.7.4"
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=20.0"
+  }
+}

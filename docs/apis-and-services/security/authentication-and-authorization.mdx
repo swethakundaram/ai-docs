@@ -1,0 +1,128 @@
+---
+last_update: { author: "Priyanka Bhadri" }
+---
+
+
+# Authentication and Authorization
+
+WaveMaker provides a unified security framework to verify user identities and control access to application resources. Authentication ensures only valid users can enter the application, while authorization determines what actions they can perform based on assigned roles and permissions.
+
+This document covers:
+
+- Authentication
+- User Onboarding
+- Authorization
+- Access Levels and Permissions
+
+---
+
+## Authentication
+
+Authentication is the process of verifying a user's identity before granting access to an application. WaveMaker intercepts secured requests and validates credentials through the configured authentication provider.
+
+### How Authentication Works
+
+1. A user attempts to access the application.  
+2. WaveMaker intercepts the request through the security filter.  
+3. The user's credentials are verified by the configured authentication provider.  
+4. If authentication succeeds, the user proceeds to onboarding; if it fails, access is denied.
+
+### Supported Authentication Providers
+
+WaveMaker supports multiple authentication mechanisms:
+
+- **Database Authentication** – Username and password stored in application database tables  
+- **LDAP / Active Directory** – Enterprise directory integration for centralized user management  
+- **Central Authentication Service (CAS) / SAML** – Federated single sign-on for enterprise applications  
+- **OpenID Connect / OAuth2** – Modern cloud or social login providers  
+- **Custom Java Authentication** – Fully customizable authentication flows  
+
+### Behavior for Unauthenticated Requests
+
+- Requests from unauthenticated users return HTTP 401 or are redirected to the configured login page.  
+- Login flows are automatically generated based on the selected provider.  
+
+Authentication forms the foundation of security by ensuring that only verified users enter the application.
+
+---
+
+## User Onboarding
+
+After authentication, WaveMaker performs **user onboarding**, which retrieves additional user information from the authentication provider.  
+
+This includes:
+
+- **Username** – Unique user identifier  
+- **Assigned Roles** – Predefined roles determining access permissions  
+- **Group Memberships** – Optional grouping to simplify role assignment and management  
+
+The onboarding process maps users to roles, which are then used for role-based access control (RBAC).
+
+---
+
+## Authorization
+
+Authorization determines **what an authenticated user is allowed to access or perform** within the application. WaveMaker uses a **role-based access control (RBAC)** model, where permissions are assigned to roles rather than individual users.
+
+### How Authorization Works
+
+1. User roles are retrieved during onboarding.  
+2. Access requests for pages, services, or UI components are evaluated against the assigned roles.  
+3. If the user has the required role, access is granted; otherwise, it is denied.  
+4. All checks are enforced on the server to prevent client-side bypass.
+
+### Where Authorization Applies
+
+- **Application Pages** – Restrict which pages a user can view  
+- **Backend Services and APIs** – Control which services a user can invoke  
+- **UI Components and Actions** – Conditionally render or enable features based on roles  
+
+Authorization ensures users can only perform actions permitted by their roles, maintaining security and application integrity.
+
+---
+
+
+## Access Levels and Permissions
+
+Once roles are defined in a WaveMaker application, you can configure **access levels and permissions** to control how these roles interact with application resources. Permissions determine who can view or interact with specific pages, services, and UI components.
+
+### Permission Levels
+
+WaveMaker supports three primary permission levels that can be applied to resources and services:
+
+- **Everyone** – Grants access to all users, regardless of whether they are logged in. This is typically used for public resources such as About or Contact pages.  
+- **Authenticated** – Grants access only to users who have successfully signed in. Most secured resources default to this level once authentication is enabled.  
+- **Role‑Based Authorization** – After a resource is set to “Authenticated,” you can further restrict access by assigning specific roles. Only users with those roles will be allowed to use the resource.
+
+By default, application resources and services are set to “Authenticated,” meaning they are accessible only after the user logs in. You can override this default by assigning a different permission level as needed. 
+
+### Applying Permissions
+
+Permissions can be configured for different types of application elements:
+
+- **Web Resources** – These include application pages created in WaveMaker. Each page can have its own permission level.  
+- **Services** – This includes database services, web services, and custom Java services. Permissions can be set for each service and its endpoints.  
+- **Prefabs** – Permissions set on a Prefab affect all the services invoked within that Prefab.  
+
+Permissions follow a **hierarchical model**: if a resource does not have a specific permission assigned, it inherits the permission of its parent. For example, if a database is set to “Authenticated,” its contained controllers and operations will inherit that permission unless explicitly overridden. 
+
+### Permission Inheritance
+
+Permission inheritance means that child resources automatically adopt the permission level of their parent when no explicit permission is defined. For example:  
+- If a database service is set to “Authenticated,” its controllers and operations inherit the same level.  
+- If a controller has specific role restrictions, only those are applied to its operations if defined; otherwise, the controller’s permissions cascade down. 
+
+
+
+---
+
+## Summary
+
+WaveMaker's authentication and authorization framework provides a **complete, flexible, and server-enforced security model**:
+
+- **Comprehensive** – Combines authentication, onboarding, and authorization  
+- **Flexible** – Supports multiple authentication providers and custom logic  
+- **Server-Enforced** – Prevents access through client-side circumvention  
+- **Secure by Default** – Includes protections against common web threats  
+
+By leveraging this framework, applications ensure that only authenticated users can access resources and perform only authorized actions.
