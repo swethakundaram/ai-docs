@@ -264,6 +264,7 @@
     ]}
   },
   "Build Time": {
+    "UI": {
     "Angular": [
       {
         "name": "Apache Maven",
@@ -316,9 +317,12 @@
         "link": "https://www.npmjs.com/",
         "version": "10.9.0"
       }
-    ]
-  },
+    ]},
+    "Backend": {
+      "Java": []
+  }},
   "Run Time": {
+    "UI": {
     "Angular": [
       {
         "name": "Java (JDK)",
@@ -365,9 +369,13 @@
         "link": "https://nodejs.org/",
         "version": "22.11.0"
       }
-    ]
+    ]},
+    "Backend": {
+      "Java": []
+    }
   },
   "Developer Setup": {
+    "UI": {
     "Angular": [],
     "React": [],
     "React Native": [
@@ -383,6 +391,9 @@
         "link": "https://developer.apple.com/xcode/",
         "version": "26"
       }
-    ]
+    ]},
+        "Backend": {
+        "Java": []
+        }
   }
 }
