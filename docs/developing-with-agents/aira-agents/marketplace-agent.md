@@ -7,7 +7,7 @@ last_update: { author: 'Vivek Raj' }
 # Marketplace Agent
 
 
-The **Marketplace Agent** enables developers to discover and install reusable artifacts from the [WaveMaker Marketplace](https://marketplace.wavemaker.com/) directly into their application projects. It functions as a controlled integration layer between the centralized artifact repository and project codebase.
+The **Marketplace Agent** enables developers to discover and install reusable artifacts from the [WaveMaker Marketplace](https://marketplace.wavemaker.ai/) directly into their application projects. It functions as a controlled integration layer between the centralized artifact repository and project codebase.
 
 Reusing artifacts helps teams build faster, maintain consistency, and rely on well-tested components. The agent automates the discovery-to-installation workflow while enforcing compatibility checks, version validation, and explicit developer approval. Its scope is limited to artifact acquisition only; configuration, binding, and runtime usage are handled separately.
 

@@ -123,7 +123,7 @@ The wavemakerapp/app-builder Docker image is packed with required software packa
 
 
 <VideoCard
-  videoUrl="https://next-academy.wavemaker.com/Watch?wm=49BD97DDB1"
+  videoUrl="https://academy.wavemaker.ai/Watch?wm=49BD97DDB1"
   title="Generate war using docke"
   description="Learn how to generate a deployable WAR file using Docker in WaveMaker.."
   thumbnailText="Generate war using docker"

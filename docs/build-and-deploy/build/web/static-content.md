@@ -88,7 +88,7 @@ WaveMaker supports multiple ways to configure the CDN URL.
 
 
 <VideoCard
-  videoUrl="https://next-academy.wavemaker.com/Watch?wm=49E878DE75"
+  videoUrl="https://academy.wavemaker.ai/Watch?wm=49E878DE75"
   title="Build and Deploy Static Content"
   description="Watch for deeper understanding of Static Content in WaveMaker"
   thumbnailText="Build and Deploy Static Content"

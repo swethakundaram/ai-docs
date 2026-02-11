@@ -47,7 +47,7 @@ The export process generates:
 
 
 <VideoCard
-  videoUrl="https://next-academy.wavemaker.com/Watch?wm=F1B323D0D3"
+  videoUrl="https://academy.wavemaker.ai/Watch?wm=F1B323D0D3"
   title="Generate a WAR from studio"
   description="Understand how to generate a deployable WAR file from WaveMaker Studio."
   thumbnailText="Generate a WAR from studio"
