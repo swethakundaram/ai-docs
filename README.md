@@ -2,7 +2,7 @@
 
 Welcome to the wavemaker.ai Documentation repository! This site is built with [Docusaurus](https://docusaurus.io/) and serves as the comprehensive documentation hub for the Agentic Application Development Platform.
 
-🌐 **Live Site**: [next-docs.wavemaker.ai](https:next-//docs.wavemaker.ai/)
+🌐 **Live Site**: [WaveMaker.ai Docs](https://docs.wavemaker.ai/)
 
 ## Quick Start
 
