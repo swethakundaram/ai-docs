@@ -3,10 +3,10 @@
     "UI": {
       "Angular": [
         {
-          "name": "Angular",
+          "name": "Angularrrrrr",
           "description": "Platform for building mobile and desktop web applications.",
           "link": "https://angular.io/",
-          "version": "18.2.13"
+          "version": "18.2.135"
         },
         {
           "name": "jQuery",
@@ -51,19 +51,27 @@
           "version": "6.1.15"
         },
         {
-          "name": "Lodash (lodash-es)",
-          "description": "A modern JavaScript utility library delivering modularity, performance, & extras.",
-          "link": "https://lodash.com/",
-          "version": "4.17.21"
-        },
-        {
           "name": "Hammer.js",
           "description": "A javascript library for multi-touch gestures.",
           "link": "https://hammerjs.github.io/",
           "version": "2.0.8"
+        },
+        {
+          "name": "Lodash (lodash-es)",
+          "description": "A modern JavaScript utility library delivering modularity, performance, & extras.",
+          "link": "https://lodash.com/",
+          "version": "4.17.21"
         }
       ],
-      "React": [],
+      "React": [
+        {
+          "name": "hgjh",
+          "version": "7686",
+          "url": "jgjkh",
+          "description": "vhjv",
+          "link": "jgjkh"
+        }
+      ],
       "React Native": [
         {
           "name": "React Native",
@@ -368,7 +376,29 @@
   },
   "Developer Setup": {
     "Angular": [],
-    "React": [],
+    "React": [
+      {
+        "name": "ssdrrrrrr",
+        "version": "34",
+        "url": "fdf",
+        "description": "dfdf",
+        "link": "fdf"
+      },
+      {
+        "name": "rrere",
+        "version": "rer",
+        "url": "rer",
+        "description": "ererer",
+        "link": "rer"
+      },
+      {
+        "name": "cscsdc",
+        "version": "343434",
+        "url": "43434vdfvdffrfrfrf",
+        "description": "343434",
+        "link": "43434vdfvdffrfrfrf"
+      }
+    ],
     "React Native": [
       {
         "name": "Android Studio",
@@ -380,7 +410,21 @@
         "name": "Xcode",
         "description": "Integrated Development Environment (IDE) for macOS/iOS.",
         "link": "https://developer.apple.com/xcode/",
-        "version": "26"
+        "version": "2789"
+      },
+      {
+        "name": "rer",
+        "version": "re",
+        "url": "rer",
+        "description": "er",
+        "link": "rer"
+      },
+      {
+        "name": "er",
+        "version": "er",
+        "url": "ere",
+        "description": "rerer",
+        "link": "ere"
       }
     ]
   }

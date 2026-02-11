@@ -69,46 +69,47 @@
           "name": "React Native",
           "description": "Framework for building native apps using React.",
           "link": "https://reactnative.dev/",
-          "version": "0.76.3"
+          "version": "0.81.4"
         },
         {
           "name": "Expo",
           "description": "Platform for universal React applications.",
           "link": "https://expo.dev/",
-          "version": "52.0.17"
+          "version": "54.0.12"
         }
       ]
     },
-    "Backend": [
+    "Backend": {
+      "Java": [
       {
         "name": "Spring Framework",
         "description": "Comprehensive programming and configuration model for modern Java-based enterprise applications.",
         "link": "https://spring.io/projects/spring-framework",
-        "version": "6.2.11"
+        "version": "6.2.15"
       },
       {
         "name": "Spring Security",
         "description": "Authentication and access-control framework.",
         "link": "https://spring.io/projects/spring-security",
-        "version": "6.4.11"
+        "version": "6.5.7"
       },
       {
         "name": "Spring Data",
         "description": "Simplifies data access for relational and non-relational databases.",
         "link": "https://spring.io/projects/spring-data",
-        "version": "2024.1.10"
+        "version": "2025.0.7"
       },
       {
         "name": "Spring Boot",
         "description": "Framework to create stand-alone, production-grade Spring based Applications.",
         "link": "https://spring.io/projects/spring-boot",
-        "version": "3.4.10"
+        "version": "3.5.9"
       },
       {
         "name": "Spring Session",
         "description": "Provides an API and implementations for managing a user's session information.",
         "link": "https://spring.io/projects/spring-session",
-        "version": "3.4.3"
+        "version": "3.5.4"
       },
       {
         "name": "Hibernate (Jakarta)",
@@ -126,7 +127,7 @@
         "name": "Jackson",
         "description": "Standard JSON library for Java (streaming, DOM, binding).",
         "link": "https://github.com/FasterXML/jackson",
-        "version": "2.19.0"
+        "version": "2.20.1"
       },
       {
         "name": "SLF4J",
@@ -138,13 +139,13 @@
         "name": "Log4j2",
         "description": "Java-based logging utility.",
         "link": "https://logging.apache.org/log4j/2.x/",
-        "version": "2.25.2"
+        "version": "2.25.3"
       },
       {
         "name": "HttpComponents HttpClient",
         "description": "Client-side HTTP standards implementation.",
         "link": "https://hc.apache.org/httpcomponents-client-5.x/",
-        "version": "5.4.4"
+        "version": "5.5.1"
       },
       {
         "name": "Jakarta Servlet",
@@ -156,13 +157,13 @@
         "name": "HikariCP",
         "description": "High-performance JDBC connection pool.",
         "link": "https://github.com/brettwooldridge/HikariCP",
-        "version": "6.3.3"
+        "version": "7.0.2"
       },
       {
         "name": "Apache Commons Lang3",
         "description": "Extra methods for manipulation of standard Java classes.",
         "link": "https://commons.apache.org/proper/commons-lang/",
-        "version": "3.18.0"
+        "version": "3.19.0"
       },
       {
         "name": "Guava",
@@ -174,7 +175,7 @@
         "name": "PostgreSQL Driver",
         "description": "JDBC driver for PostgreSQL.",
         "link": "https://jdbc.postgresql.org/",
-        "version": "42.7.4"
+        "version": "42.7.8"
       },
       {
         "name": "Hibernate Validator",
@@ -186,7 +187,7 @@
         "name": "JGit",
         "description": "Java implementation of the Git version control system.",
         "link": "https://www.eclipse.org/jgit/",
-        "version": "7.3.0"
+        "version": "7.4.0"
       },
       {
         "name": "Apache Commons Codec",
@@ -234,7 +235,7 @@
         "name": "MongoDB Driver",
         "description": "Java driver for MongoDB.",
         "link": "https://www.mongodb.com/docs/drivers/java/sync/current/",
-        "version": "5.4.0"
+        "version": "5.6.2"
       },
       {
         "name": "Jakarta Validation API",
@@ -260,7 +261,7 @@
         "link": "http://hsqldb.org/",
         "version": "2.7.4"
       }
-    ]
+    ]}
   },
   "Build Time": {
     "Angular": [
@@ -268,7 +269,7 @@
         "name": "Apache Maven",
         "description": "Software project management and comprehension tool.",
         "link": "https://maven.apache.org/",
-        "version": "3.9.9"
+        "version": "3.9.12"
       },
       {
         "name": "Apache Ant",
@@ -289,19 +290,19 @@
         "name": "Android Gradle Plugin (AGP)",
         "description": "Build system for Android applications.",
         "link": "https://developer.android.com/build",
-        "version": "8.10.2"
+        "version": "8.14.3"
       },
       {
         "name": "SDK Build Tools",
         "description": "Tools required to build Android applications.",
         "link": "https://developer.android.com/studio/releases/build-tools",
-        "version": "34.0.0"
+        "version": "36.0.0"
       },
       {
         "name": "wm-reactnative-cli",
         "description": "WaveMaker CLI for React Native projects.",
         "link": "https://www.npmjs.com/package/@wavemaker/wm-reactnative-cli",
-        "version": "1.8.8"
+        "version": "1.9.5"
       },
       {
         "name": "Maven",
@@ -366,7 +367,7 @@
       }
     ]
   },
-  "Developer Setup (Recommended)": {
+  "Developer Setup": {
     "Angular": [],
     "React": [],
     "React Native": [
@@ -374,13 +375,13 @@
         "name": "Android Studio",
         "description": "Integrated Development Environment (IDE) for Android app development.",
         "link": "https://developer.android.com/studio",
-        "version": "Ladybug 2024.2.2"
+        "version": "Narwhal 4 2025.1.4"
       },
       {
         "name": "Xcode",
         "description": "Integrated Development Environment (IDE) for macOS/iOS.",
         "link": "https://developer.apple.com/xcode/",
-        "version": "15.4"
+        "version": "26"
       }
     ]
   }

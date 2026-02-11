@@ -80,7 +80,7 @@ The wavemakerapp/app-builder and wavemakerapp/app-runtime-tomcat Docker images a
 :::
 
 <VideoCard
-  videoUrl="https://next-academy.wavemaker.com/Watch?wm=49BD97DDB1"
+  videoUrl="https://academy.wavemaker.ai/Watch?wm=49BD97DDB1"
   title="Dockerize the wavemaker app"
   description="Watch this video to understand how to Dockerize a WaveMaker application"
   thumbnailText="Dockerize the wavemaker app"

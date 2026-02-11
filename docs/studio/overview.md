@@ -1,5 +1,5 @@
 ---
-last_update: { author: "Author Name" }
+last_update: { author: "Deepak A" }
 ---
 
 # Overview
@@ -18,7 +18,7 @@ WaveMaker platform focuses on 3 key areas to provide acceleration to large teams
 2. **Squad of AI Agents** for SDLC workflows, with standards based app generation
 3. **Integrated Studio** experience to develop, test, configure & deploy apps
 
-![Three Pillars](../release-notes/release-12/assets/images/1-ThreePillar.png)
+![Three Pillars](../release-notes/release-version-1/assets/images/1-ThreePillar.png)
 
 ## 1. Design to code Automation
 Autocode converts Figma designs to application artifacts using AI, by generating a comprehensive set of Design Tokens that are mapped to UI component library. Autocode identifies components using AI and maps them to the corresponding WaveMaker UI components. 
