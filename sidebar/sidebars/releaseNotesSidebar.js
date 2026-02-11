@@ -7,25 +7,25 @@ export default [
   },
   {
     type: 'category',
-    label: 'Release 12',
+    label: 'Release - Version 1',
     collapsible: true,
     collapsed: true,
     items: [
       {
         type: 'doc',
-        id: 'release-notes/release-12/the-announcement',
+        id: 'release-notes/release-version-1/the-announcement',
         label: '📣 The Announcement ',
       },
       {
         type: 'category',
-        label: '12.0.x',
+        label: '1.0.x',
         collapsible: true,
         collapsed: true,
         items: [
           {
             type: 'doc',
-            id: 'release-notes/release-12/version-12-0-x/12.0.1',
-            label: '12.0.1 Beta',
+            id: 'release-notes/release-version-1/version-1-0-x/1.0.0',
+            label: '1.0.0 Beta',
           },
         ],
       },
