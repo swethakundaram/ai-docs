@@ -80,7 +80,7 @@
       ]
     },
     "Backend": {
-      "Backend": [
+      "Java": [
       {
         "name": "Spring Framework",
         "description": "Comprehensive programming and configuration model for modern Java-based enterprise applications.",
