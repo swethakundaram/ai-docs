@@ -76,7 +76,7 @@ Settings → Profile Configuration → Build Options
 
 
 <VideoCard
-  videoUrl="https://next-academy.wavemaker.com/Watch?wm=F1B323D0D3"
+  videoUrl="https://academy.wavemaker.ai/Watch?wm=F1B323D0D3"
   title="Build Options"
   description="Watch for deeper understanding of build options in WaveMaker"
   thumbnailText="Build Options"

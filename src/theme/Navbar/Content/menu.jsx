@@ -24,24 +24,24 @@ const MenuSection = () => {
     {
       label: "Academy",
       icon: "/img/icon/acd-icon.svg",
-      link: " https://next-academy.wavemaker.com/",
+      link: " https://academy.wavemaker.ai/",
       subMenu: [],
     },
     {
       label: "Marketplace",
       icon: "/img/icon/mp-icon.png",
-      link: "https://marketplace.wavemaker.com/",
+      link: "https://marketplace.wavemaker.ai/",
       subMenu: [],
     },
     {
       label: "Web",
       icon: "/img/icon/rs-icon.svg",
-      link: "https://react-components.wavemaker.com/",
+      link: "https://react-components.wavemaker.ai/",
     },
     {
       label: "Mobile",
       icon: "/img/icon/rns-icon.svg",
-      link: "https://reactnative-components.wavemaker.com/",
+      link: "https://reactnative-components.wavemaker.ai/",
     },
     {
       label: "Platform",
