@@ -6,7 +6,7 @@ export default function remarkWaveMaker() {
 
   return (tree) => {
     visit(tree, 'text', (node) => {
-      if (node.value && regex.test(node.value)) {
+      if (node.value) {
         node.value = node.value.replace(regex, BRAND);
       }
     });
