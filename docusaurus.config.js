@@ -4,16 +4,16 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from "prism-react-renderer";
+import { themes as prismThemes } from 'prism-react-renderer';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "WaveMaker Docs",
-  tagline: "Welcome to the Learning Center",
-  url: "https://next-docs.wavemaker.com",
-  organizationName: "WaveMaker, Inc.",
-  favicon: "https://dev-ecosystem.s3.us-east-1.amazonaws.com/menu-icon/docs-icon.png",
+  title: 'WaveMaker Docs',
+  tagline: 'Welcome to the Learning Center',
+  url: 'https://next-docs.wavemaker.com',
+  organizationName: 'WaveMaker, Inc.',
+  favicon: 'https://dev-ecosystem.s3.us-east-1.amazonaws.com/menu-icon/docs-icon.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -22,54 +22,52 @@ const config = {
   },
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
-  onBrokenLinks: "throw",
-
+  baseUrl: '/',
+  onBrokenLinks: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
   presets: [
     [
-      "classic",
+      'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: "./sidebar/sidebars.js",
+          sidebarPath: './sidebar/sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           //TODO: Update the editUrl to point to correct branch
-          editUrl:
-            "https://github.com/wavemaker/docs/tree/release-12/",
+          editUrl: 'https://github.com/wavemaker/docs/tree/release-12/',
           showLastUpdateTime: true,
           showLastUpdateAuthor: true,
         },
         blog: {
           showReadingTime: true,
           feedOptions: {
-            type: ["rss", "atom"],
+            type: ['rss', 'atom'],
             xslt: true,
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
           // Useful options to enforce blogging best practices
-          onInlineTags: "warn",
-          onInlineAuthors: "ignore",
-          onUntruncatedBlogPosts: "warn",
-          authorsMapPath: "../../data/author/authors.yml",
+          onInlineTags: 'warn',
+          onInlineAuthors: 'ignore',
+          onUntruncatedBlogPosts: 'warn',
+          authorsMapPath: '../../data/author/authors.yml',
           blogSidebarTitle: 'All Blogs',
           blogSidebarCount: 'ALL',
-          path: "blogs/blog",
+          path: 'blogs/blog',
         },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: './src/css/custom.css',
         },
       }),
     ],
@@ -79,31 +77,37 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: 'img/docusaurus-social-card.jpg',
       algolia: {
-        appId: "QCVP2DTGFE",
-        apiKey: "5c6569989dc17486081c8ab5cd736d10",
-        indexName: "next_wavemakerdocs",
+        appId: 'QCVP2DTGFE',
+        apiKey: '5c6569989dc17486081c8ab5cd736d10',
+        indexName: 'ai-docs',
       },
+      metadata: [
+        {
+          name: 'algolia-site-verification',
+          content: '8AF2BA20C6F7F417',
+        },
+      ],
       colorMode: {
         respectPrefersColorScheme: true,
         disableSwitch: false,
       },
       navbar: {
-        title: "WaveMaker Docs",
+        title: 'WaveMaker Docs',
         logo: {
-          alt: "WaveMaker Logo",
-          src: "https://dev-ecosystem.s3.us-east-1.amazonaws.com/menu-icon/docs-icon.png",
+          alt: 'WaveMaker Logo',
+          src: 'https://dev-ecosystem.s3.us-east-1.amazonaws.com/menu-icon/docs-icon.png',
         },
         items: [
           {
-            type: "dropdown",
+            type: 'dropdown',
             label: "What's New",
             position: 'left',
             items: [
               {
                 to: '/docs/release-notes/',
-                label: "Release Notes",
+                label: 'Release Notes',
               },
               {
                 label: 'Feature Announcements',
@@ -112,21 +116,21 @@ const config = {
               {
                 label: 'Tech Stack',
                 to: '/tech-stack',
-              }
+              },
             ],
           },
           {
-            type: "docSidebar",
-            sidebarId: "guideSidebar",
-            position: "left",
-            label: "Guide",
+            type: 'docSidebar',
+            sidebarId: 'guideSidebar',
+            position: 'left',
+            label: 'Guide',
           },
-          { to: "/blog", label: "Blogs", position: "left" },
+          { to: '/blog', label: 'Blogs', position: 'left' },
           {
             type: 'docsVersionDropdown',
             position: 'right',
             versions: {
-            current: {label: 'v12.0.0'},
+              current: { label: 'v12.0.0' },
             },
             href: '#',
             dropdownItemsAfter: [
@@ -139,7 +143,7 @@ const config = {
         ],
       },
       footer: {
-        style: "light",
+        style: 'light',
 
         links: [
           {
@@ -217,28 +221,28 @@ const config = {
     }),
   plugins: [
     [
-      "@docusaurus/plugin-content-blog",
+      '@docusaurus/plugin-content-blog',
       {
         /**
          * Required for any multi-instance plugin
          */
-        id: "feature-announcements",
+        id: 'feature-announcements',
         /**
          * URL route for the blog section of your site.
          * *DO NOT* include a trailing slash.
          */
-        routeBasePath: "feature-announcements",
+        routeBasePath: 'feature-announcements',
         /**
          * Path to data on filesystem relative to site dir.
          */
-        path: "blogs/feature-announcements",
-        authorsMapPath: "../../data/author/authors.yml",
+        path: 'blogs/feature-announcements',
+        authorsMapPath: '../../data/author/authors.yml',
         blogSidebarTitle: 'Feature Announcements',
         blogSidebarCount: 'ALL',
       },
     ],
   ],
-  themes: ["@docusaurus/theme-mermaid"],
+  themes: ['@docusaurus/theme-mermaid'],
   markdown: {
     mermaid: true,
     hooks: {
