@@ -1,5 +1,9 @@
 {
-  "plugins": ["remark-gfm", ["remark-frontmatter", ["yaml", "toml"]]],
+  "plugins": [
+    "remark-gfm",
+    ["remark-frontmatter", ["yaml", "toml"]],
+    "./scripts/remark-wavemaker.js"
+  ],
   "settings": {
     "bullet": "-",
     "listItemIndent": "one"

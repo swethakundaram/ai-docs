@@ -11,13 +11,14 @@ if [ -f "$CACHE_FILE" ]; then
   
   # Check if there are any changes between last build and current commit
   CHANGES=$(git diff --name-only "$LAST_BUILD_COMMIT" "$CURRENT_COMMIT" 2>/dev/null)
+  DIFF_EXIT=$?
   
-  if [ $? -eq 0 ] && [ -z "$CHANGES" ]; then
+  if [ $DIFF_EXIT -eq 0 ] && [ -z "$CHANGES" ]; then
     echo "✅ No changes since last build (commit $LAST_BUILD_COMMIT), skipping"
     exit 0
   fi
   
-  if [ $? -ne 0 ]; then
+  if [ $DIFF_EXIT -ne 0 ]; then
     # Last build commit doesn't exist (rebased/reset), rebuild
     echo "⚠️  Last build commit not found, rebuilding..."
   else
