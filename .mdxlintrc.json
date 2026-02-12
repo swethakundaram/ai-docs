@@ -1,0 +1,7 @@
+{
+  "plugins": ["remark-gfm", ["remark-frontmatter", ["yaml", "toml"]]],
+  "settings": {
+    "bullet": "-",
+    "listItemIndent": "one"
+  }
+}
