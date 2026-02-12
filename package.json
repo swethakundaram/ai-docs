@@ -47,7 +47,8 @@
     "inquirer": "^12.11.1",
     "lint-staged": "^16.2.7",
     "mdxlint": "^1.0.0",
-    "prettier": "^3.8.1"
+    "prettier": "^3.8.1",
+    "unist-util-visit": "^5.1.0"
   },
   "browserslist": {
     "production": [
