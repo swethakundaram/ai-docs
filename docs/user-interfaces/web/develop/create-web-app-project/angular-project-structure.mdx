@@ -13,7 +13,26 @@ WaveMaker generates reusable Angular code that follows best practices, such as:
     - **Custom Extensions**: Developers can add custom or third-party Angular components to extend the generated ones.
     - **Easy Deployment**: The frontend code can be deployed separately as static assets to a CDN.
 
+## Working With Generated Angular Code
+
+WaveMaker creates a standard Maven-compliant project, enabling developers to manage and extend the codebase independently. To modify the code without WaveMaker Studio, developers must grasp the project’s file structure. UI-related adjustments for a web application primarily occur within the src/app/pages/ folder, where each page functions as a component containing its associated files.
+
+### Steps to Export a WaveMaker Project as Angular ZIP
+
+- **Open your project in WaveMaker Studio:** Make sure the project you want to export is loaded and ready.
+- **Click on “Export Project”:** This opens the export options menu.
+- **Select “Project as Angular ZIP”:** Choose the option to export your application as an Angular source bundle.
+- **Confirm the Export Job:** A dialog appears saying the export job has been created (Click OK to proceed)
+- **Open Project Notifications:** Click the Project Notification icon to view background jobs.
+- **Navigate to the Jobs Tab:** In the popup, go to the Jobs tab to see export progress.
+- **Find the Export Job:** Locate the job related to “Angular ZIP export”.
+- **Download the Angular ZIP:** Click the Download button for the completed job.
+
 ## Project Structure 
+
+When you export a WaveMaker app as an Angular ZIP, you get a standard Angular CLI project with WaveMaker-specific runtime and build layers on top. 
+
+Think of it as: **Angular app + WaveMaker runtime + generated pages + service bindings**
 
 ```javascript
 angular_app/
@@ -76,7 +95,3 @@ angular_app/
 │       └── app-servicedefs.json // Backend API definitions used by WM
 
 ```
-
-## Working With Generated Angular Code
-
-WaveMaker creates a standard Maven-compliant project, enabling developers to manage and extend the codebase independently. To modify the code without WaveMaker Studio, developers must grasp the project’s file structure. UI-related adjustments for a web application primarily occur within the src/app/pages/ folder, where each page functions as a component containing its associated files.
