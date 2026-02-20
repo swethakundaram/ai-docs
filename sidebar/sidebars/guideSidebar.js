@@ -441,6 +441,14 @@ export default [
               'guide/migrated-docs/local-setup',
             ],
           },
+          {
+            type: 'category',
+            label: 'Table',
+            items: [
+              'guide/components/creating-dynamic-data-table',
+            ],
+          }
+
           // {
           //   type: 'category',
           //   label: 'Deployment',
