@@ -449,6 +449,7 @@ export default [
               'guide/components/configuring-row-expansion-in-a-data-table',
               'guide/components/combining-columns-in-data-table',
               'guide/components/displaying-additional-components-data-table',
+              'guide/components/queries-with-dynamic-where-clause',
             ],
           },
           {
