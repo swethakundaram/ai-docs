@@ -447,6 +447,7 @@ export default [
             items: [
               'guide/components/creating-dynamic-data-table',
               'guide/components/configuring-row-expansion-in-a-data-table',
+              'guide/components/custom-styling-data-table-columns-rows',
               'guide/components/combining-columns-in-data-table',
               'guide/components/displaying-additional-components-data-table',
               'guide/components/queries-with-dynamic-where-clause',
