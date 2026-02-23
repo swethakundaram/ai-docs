@@ -446,6 +446,17 @@ export default [
             label: 'Table',
             items: [
               'guide/components/creating-dynamic-data-table',
+              'guide/components/configuring-row-expansion-in-a-data-table',
+              'guide/components/combining-columns-in-data-table',
+              'guide/components/displaying-additional-components-data-table',
+            ],
+          },
+          {
+            type: 'category',
+            label: 'Form',
+            items: [
+              'guide/components/creating-dynamic-form',
+              'guide/components/live-form-fields-configuration'
             ],
           }
 
